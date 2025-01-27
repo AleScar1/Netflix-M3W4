@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Netflix Carousel</title>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="assets/imgs/Netflix_Logo_RGB.png" alt="Logo" height="40" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link "  href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">TV Shows</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Movies</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Recently Added</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">My List</a></li>
+          </ul>
+          <div class="d-flex align-items-center">
+            <a href="#" class="text-white me-3"><i class="fas fa-search"></i></a>
+            <a href="#" class="text-white me-3">KIDS</a>
+            <a href="#" class="text-white me-3"><i class="fas fa-bell"></i></a>
+            <div class="account-dropdown">
+              <a class="d-flex align-items-center text-white text-decoration-none" href="#" role="button">
+                <div class="profile-square me-2">
+                  <img id="accountImage" src="assets/imgs/logo_utente1.png" alt="User Avatar" class="account-img" />
+                </div>
+              </a>
+              <div id="dropdownMenu" class="dropdown-menu-custom">
+                <ul>
+                  <li class="animate-on-scroll">
+                    <a class="dropdown-item" href="#"><img src="assets/imgs/logo_utente1.png" class="menu-icon" alt="Icon"> utente2</a>
+                  </li>
+                  <li class="animate-on-scroll">
+                    <a class="dropdown-item" href="#"><img src="assets/imgs/logo_utente1.png" class="menu-icon" alt="Icon"> utente3Prova</a>
+                  </li>
+                  <li class="animate-on-scroll">
+                    <a class="dropdown-item" href="#"><i class="fas fa-user-edit menu-icon"></i> Manage Profiles</a>
+                  </li>
+                  <li class="animate-on-scroll">
+                    <a class="dropdown-item" href="#"><i class="fas fa-exchange-alt menu-icon"></i> Transfer Profile</a>
+                  </li>
+                  <li class="animate-on-scroll">
+                    <a class="dropdown-item" href="#"><i class="fas fa-user-circle menu-icon"></i> Account</a>
+                  </li>
+                  <li class="animate-on-scroll">
+                    <a class="dropdown-item" href="#"><i class="fas fa-question-circle menu-icon"></i> Help Center</a>
+                  </li>
+                  <li class="animate-on-scroll"><hr class="dropdown-divider"></li>
+                  <li class="animate-on-scroll">
+                    <a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt menu-icon"></i> Sign out of Netflix</a>
+                  </li>
+                </ul>                
+              </div>
+            </div>            
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="space1">
+
+  </div>
+
+<!-- TV Shows Section -->
+<section class="tv-shows-section bg-dark text-white py-4">
+  <div class="container d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center">
+      <h1 class="mb-0">TV Shows</h1>
+      <div class="dropdown ms-3">
+        <button
+          class="btn btn-outline-light dropdown-toggle"
+          type="button"
+          id="genresDropdown"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Genres
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="genresDropdown">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Comedy</a></li>
+          <li><a class="dropdown-item" href="#">Drama</a></li>
+          <li><a class="dropdown-item" href="#">Fantasy</a></li>
+          <li><a class="dropdown-item" href="#">Sci-Fi</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- New Buttons -->
+    <div class="btn-group-r">
+      <button class="btn btn-outline-light me-2">
+        <i class="fas fa-bars"></i>
+      </button>
+      <button class="btn btn-outline-light">
+        <i class="fas fa-th"></i>
+      </button>
+    </div>
+  </div>
+</section>
+  
+  <div class="space1">
+    
+  </div>
+
+<!-- MAIN -->
+<div class="container my-4">
+  <h2 class="text-white mb-4">Trending Now</h2>
+  <div id="carouselExample" class="carousel slide" data-bs-interval="false">
+
+    <div class="carousel-inner">
+      <!-- Prima slide -->
+      <div class="carousel-item active">
+        <div class="row">
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/1.png" class="card-img-top" alt="Trending 1">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/2.png" class="card-img-top" alt="Trending 2">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/3.png" class="card-img-top" alt="Trending 3">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/4.png" class="card-img-top" alt="Trending 4">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/5.png" class="card-img-top" alt="Trending 5">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/6.png" class="card-img-top" alt="Trending 6">
+            </div>
+          </div>
+          <!-- Settima card visibile al 20% -->
+          <div class="col-lg-2 col-md-3 col-6 mb-3 last-card">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/7.png" class="card-img-top" alt="Trending 7">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seconda slide -->
+      <div class="carousel-item">
+        <div class="row">
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/8.png" class="card-img-top" alt="Trending 8">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/9.png" class="card-img-top" alt="Trending 9">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/10.png" class="card-img-top" alt="Trending 10">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/11.png" class="card-img-top" alt="Trending 11">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/12.png" class="card-img-top" alt="Trending 12">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/13.png" class="card-img-top" alt="Trending 13">
+            </div>
+          </div>
+          <!-- Settima card visibile al 20% -->
+          <div class="col-lg-2 col-md-3 col-6 mb-3 last-card">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/14.png" class="card-img-top" alt="Trending 14">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controlli del carosello -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+    
+  </div>
+</div>
+
+<div class="space1">
+    
+</div>
+
+<!----------------------------------------------------------------------------------------------------------------------------->
+<!-- MAIN 2  ---------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------------------->
+<!-- MAIN -->
+<div class="container my-4">
+  <h2 class="text-white mb-4">Trending Now</h2>
+  <div id="carouselExample2" class="carousel slide" data-bs-interval="false">
+
+    <div class="carousel-inner">
+      <!-- Prima slide -->
+      <div class="carousel-item active">
+        <div class="row">
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/14.png" class="card-img-top" alt="Trending 1">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/13.png" class="card-img-top" alt="Trending 2">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/12.png" class="card-img-top" alt="Trending 3">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/11.png" class="card-img-top" alt="Trending 4">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/10.png" class="card-img-top" alt="Trending 5">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/9.png" class="card-img-top" alt="Trending 6">
+            </div>
+          </div>
+          <!-- Settima card visibile al 20% -->
+          <div class="col-lg-2 col-md-3 col-6 mb-3 last-card">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/8.png" class="card-img-top" alt="Trending 7">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seconda slide -->
+      <div class="carousel-item">
+        <div class="row">
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/8.png" class="card-img-top" alt="Trending 8">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/9.png" class="card-img-top" alt="Trending 9">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/10.png" class="card-img-top" alt="Trending 10">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/11.png" class="card-img-top" alt="Trending 11">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/12.png" class="card-img-top" alt="Trending 12">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/13.png" class="card-img-top" alt="Trending 13">
+            </div>
+          </div>
+          <!-- Settima card visibile al 20% -->
+          <div class="col-lg-2 col-md-3 col-6 mb-3 last-card">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/14.png" class="card-img-top" alt="Trending 14">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controlli del carosello -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample2" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+    
+  </div>
+</div>
+
+<div class="space1">
+    
+</div>
+<!----------------------------------------------------------------------------------------------------------------------------->
+<!-- MAIN 3  ---------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------------------->
+<!-- MAIN -->
+<div class="container my-4">
+  <h2 class="text-white mb-4">Trending Now</h2>
+  <div id="carouselExample3" class="carousel slide" data-bs-interval="false">
+
+    <div class="carousel-inner">
+      <!-- Prima slide -->
+      <div class="carousel-item active">
+        <div class="row">
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/18.png" class="card-img-top" alt="Trending 1">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/17.png" class="card-img-top" alt="Trending 2">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/16.png" class="card-img-top" alt="Trending 3">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/15.png" class="card-img-top" alt="Trending 4">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/14.png" class="card-img-top" alt="Trending 5">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/13.png" class="card-img-top" alt="Trending 6">
+            </div>
+          </div>
+          <!-- Settima card visibile al 20% -->
+          <div class="col-lg-2 col-md-3 col-6 mb-3 last-card">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/12.png" class="card-img-top" alt="Trending 7">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Seconda slide -->
+      <div class="carousel-item">
+        <div class="row">
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/8.png" class="card-img-top" alt="Trending 8">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/9.png" class="card-img-top" alt="Trending 9">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/10.png" class="card-img-top" alt="Trending 10">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/11.png" class="card-img-top" alt="Trending 11">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/12.png" class="card-img-top" alt="Trending 12">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6 mb-3">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/13.png" class="card-img-top" alt="Trending 13">
+            </div>
+          </div>
+          <!-- Settima card visibile al 20% -->
+          <div class="col-lg-2 col-md-3 col-6 mb-3 last-card">
+            <div class="card bg-dark text-white">
+              <img src="assets/imgs/movies/14.png" class="card-img-top" alt="Trending 14">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controlli del carosello -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample3" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample3" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+    
+  </div>
+
+<!----------------------------------------------------------------------------------------------------------------------------->
+<!-- fine carosel  ---------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------------------->
+</div>
+
+<div class="space2">
+    
+</div>
+<footer class="bg-dark text-white py-4">
+  <div class="container text-center">
+    <!-- Social Media Links -->
+    <div class="d-flex justify-content-center mb-4">
+      <a href="#" class="text-g mx-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+      <a href="#" class="text-g mx-3"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="#" class="text-g mx-3"><i class="fab fa-twitter fa-lg"></i></a>
+      <a href="#" class="text-g mx-3"><i class="fab fa-youtube fa-lg"></i></a>
+    </div>
+
+    <!-- Links Section -->
+    <div class="row justify-content-center text-center">
+      <div class="col-md-3">
+        <a href="#" class="text-g text-decoration-none d-block mb-2">Audio and Subtitles</a>
+        <a href="#" class="text-g text-decoration-none d-block mb-2">Media Center</a>
+        <a href="#" class="text-g text-decoration-none d-block mb-2">Privacy</a>
+        <a href="#" class="text-g text-decoration-none d-block">Contact Us</a>
+      </div>
+      <div class="col-md-3">
+        <a href="#" class="text-g text-decoration-none d-block mb-2">Audio Description</a>
+        <a href="#" class="text-g text-decoration-none d-block mb-2">Investor Relations</a>
+        <a href="#" class="text-g text-decoration-none d-block mb-2">Legal Notices</a>
+      </div>
+      <div class="col-md-3">
+        <a href="#" class="text-g text-decoration-none d-block mb-2">Help Center</a>
+        <a href="#" class="text-g text-decoration-none d-block mb-2">Jobs</a>
+        <a href="#" class="text-g text-decoration-none d-block mb-2">Cookie Preferences</a>
+      </div>
+      <div class="col-md-3">
+        <a href="#" class="text-g text-decoration-none d-block mb-2">Gift Cards</a>
+        <a href="#" class="text-g text-decoration-none d-block mb-2">Terms of Use</a>
+        <a href="#" class="text-g text-decoration-none d-block">Corporate Information</a>
+      </div>
+    </div>
+
+    <!-- Service Code -->
+    <div class="mt-4 mb-2">
+      <button class="btn btn-outline-light btn-sm">Service Code</button>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-3">
+      <p class="mb-0">© 1997-2019 Netflix, Inc. (i-0u101sasd7u2u)</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="script.js" defer></script>
+
+
+<script>
+
+</script>
+
+</body>
+</html>

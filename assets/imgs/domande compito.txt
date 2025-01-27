@@ -1,0 +1,7 @@
+
+1 alla fine della linea orizzontale delle card , ce un altra card ma visibile solo un 20% circa. 
+deve essere fatta in questo modo oppure è lo screenshot preso in questo modo ?
+overflow 
+
+2 ai lati delle card non sono visibile le freccie per spostarsi nelle card. 
+
