@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Chiude il menu dropdown quando si clicca fuori
+  //------------------------ Chiude il menu dropdown quando si clicca fuori
   document.addEventListener("click", (event) => {
     if (!event.target.closest(".account-dropdown")) {
       dropdownMenu.style.display = "none";
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       root: null, // Usa il viewport come contenitore di osservazione
-      rootMargin: "0px 0px -50px 0px", // Triggera 50px prima che entri completamente nel viewport
+      rootMargin: "0px 0px -150px 0px", // Triggera 50px prima che entri completamente nel viewport
       threshold: 0.1, // Attiva l'animazione quando il 10% dell'elemento è visibile
     }
   );
